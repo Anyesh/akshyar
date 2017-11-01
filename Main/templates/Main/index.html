@@ -1,0 +1,27 @@
+{% extends 'Main/Master.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="text-center">
+				{% if form.errors %}
+				<div class="alert alert-danger alert-dismissable fade in" style="text-shadow: none">
+			    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			    <strong>ERROR!</strong> You have entered an invalid url. Enter a valid one.
+			  </div>
+			  {% endif %}
+			<h1>{{title}}</h1>
+			<!-- {% for url in content %}
+			<p>{{url}}</p>
+			{% endfor %} -->
+			<form method="POST" action="."> {% csrf_token %}
+				{{ form.as_p }}
+			<input type="submit" value="Shorten" class="btn btn-primary btn-block">
+
+			</form>
+		
+		</div>
+	</div>
+
+
+{% endblock %}

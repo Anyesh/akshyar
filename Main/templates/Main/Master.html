@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %} | Akshyar</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   <!--  <link rel="icon" href="../../favicon.ico"> -->
+	<link rel="stylesheet" href= "http://getbootstrap.com/dist/css/bootstrap.min.css" type="text/css" />
+   {% load staticfiles %}
+  <link rel="stylesheet" href = "{% static 'css/StyleSheet.css' %}" type="text/css" />
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+</head>
+<body>
+	 <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="row inner">
+              <h3 class="masthead-brand">Akshyar</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="{% url 'Main:Home' %}"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+	            {% block content %}
+				      {% endblock %}
+
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Developed by CRUZ</p>
+              <p>Email: sthacruz@gmail.com</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>
+
+
+
+
+
