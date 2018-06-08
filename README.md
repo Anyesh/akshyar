@@ -26,4 +26,4 @@ $ python manage.py runserver
 open the web browser and enter the IP:PORT
 
 # Deploy on Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)]
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
