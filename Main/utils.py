@@ -11,7 +11,6 @@ def code_generator(size = SHORTCODE_MIN, chars=string.ascii_lowercase + string.d
 def create_shortcode(instance, size=SHORTCODE_MIN):
 	new_code = code_generator(size = size)
 	Klass = instance.__class__
-	queryset_exists = Klass.objects.filter(shortcode=new_code).exists()
-	if queryset_exists:
+	if queryset_exists := Klass.objects.filter(shortcode=new_code).exists():
 		return create_shortcode(size=size)
 	return new_code
