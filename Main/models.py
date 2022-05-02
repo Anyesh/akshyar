@@ -26,7 +26,7 @@ class AakshyarURLManager(models.Manager):
 			print(q.shortcode)
 			q.save()
 			new_codes += 1
-		return "new codes made {}".format(new_codes)
+		return f"new codes made {new_codes}"
 
 class AakshyarURL(models.Model):
 	url = models.CharField(max_length = 220 , validators=[validate_url])
@@ -43,13 +43,12 @@ class AakshyarURL(models.Model):
 	def save(self, *args, **kwargs):
 		if self.shortcode is None or self.shortcode == "":
 			self.shortcode = create_shortcode(self)
-		if not "http" in self.url:
-			self.url = 'http://' + self.url
+		if "http" not in self.url:
+			self.url = f'http://{self.url}'
 		super(AakshyarURL, self).save(*args, **kwargs)
 
 	def get_short_url(self):
-		url_path = reverse("scode", kwargs={'shortcode' : self.shortcode}, scheme="http")
-		return url_path
+		return reverse("scode", kwargs={'shortcode' : self.shortcode}, scheme="http")
 
 
 # class meta:

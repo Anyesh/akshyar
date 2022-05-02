@@ -22,4 +22,4 @@ class ClickEvent(models.Model):
 	objects = ClickEventManager()
 
 	def __str__(self):
-		return "{}".format(self.count)
+		return f"{self.count}"

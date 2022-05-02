@@ -28,11 +28,7 @@ class index(View):
 				"object" : obj,
 				"created" : created
 			}
-			if created:
-				template = 'Main/Success.html'
-			else:
-				template = 'Main/Exists.html'
-		
+			template = 'Main/Success.html' if created else 'Main/Exists.html'
 		return render(request, template, context)
 
 def URLRedirectView(request, shortcode=None, *args, **kwargs):
